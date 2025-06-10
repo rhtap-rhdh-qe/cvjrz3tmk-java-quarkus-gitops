@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  tssc/gitops: cvjrz3tmk-java-quarkus 
+  janus-idp.io/tekton: cvjrz3tmk-java-quarkus
+  backstage.io/kubernetes-id: cvjrz3tmk-java-quarkus
+  backstage.io/kubernetes-namespace: tssc-app 
+  app.kubernetes.io/part-of: cvjrz3tmk-java-quarkus
+resources:
+  - ci-tekton.yaml
+  - application-dev.yaml
+  - application-stage.yaml
+  - application-prod.yaml
